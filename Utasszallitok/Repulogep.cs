@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,6 +42,19 @@ namespace Utasszallitok
                 return int.Parse(Utas.Split('-')[1]);
             }
             return 0; 
+        }
+
+        public int GetMaxSzemely()
+        {
+            if (int.TryParse(Szemelyzet, out int szam))
+            {
+                return szam;
+            }
+            else if (Szemelyzet.Contains('-'))
+            {
+                return int.Parse(Szemelyzet.Split('-')[1]);
+            }
+            return 0;
         }
     }
 }
